@@ -1,0 +1,212 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 55rem;
+
+    &__side{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 55rem;
+        width: 90%;
+        margin-left: 5%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transition: all .5s ease;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.4); 
+        border-radius: 3px;
+        overflow: hidden;
+
+        &--back{
+            text-align: center;
+            transform: rotateY(180deg);
+
+            &-1{
+                background: linear-gradient(to right bottom, 
+                    rgba($color-secondary-green-light, 0.804),
+                    rgba($color-secondary-green-dark, 0.804));
+            }
+
+            &-2{
+                background: linear-gradient(to right bottom, 
+                    rgba($color-lighter, 0.804),
+                    rgba($color-darker, 0.804));
+            }
+
+            &-3{
+                background: linear-gradient(to right bottom, 
+                    rgba($color-secondary-blue-light, 0.804),
+                    rgba($color-secondary-blue-dark, 0.804));
+            }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+
+    &__picture{
+        height: 23rem;
+        width: 100%;
+        background-size: cover;
+        border-radius: 3px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+        &--1{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-green-light, 0.6),
+            rgba($color-secondary-green-dark, 0.6)),
+            url(../../image/pizza4.jpg);
+        }
+
+        &--2{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-lighter, 0.6),
+            rgba($color-darker, 0.6)),
+            url(../../image/pizza5.jpg);
+        }
+
+        &--3{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-blue-light, 0.6),
+            rgba($color-secondary-blue-dark, 0.6)),
+            url(../../image/pizza2.jpg);
+        }
+    }
+
+    &__heading{
+        font-size: 2.2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $color-white;
+        position: absolute;
+        top: 18rem;
+        right: .5rem;
+        width: 80%;
+        padding: .2rem;
+        border-radius: 3px;
+        text-align: center;
+
+        &--1{
+            background: linear-gradient(to right bottom, 
+            rgba($color-secondary-green-light, 0.8),
+            rgba($color-secondary-green-dark, 0.8));
+        }
+        
+        &--2{
+            background: linear-gradient(to right bottom, 
+            rgba($color-lighter, 0.8),
+            rgba($color-darker, 0.8))
+        }
+
+        &--3{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-blue-light, 0.8),
+            rgba($color-secondary-blue-dark, 0.8));
+        }
+    }
+
+    &__details{
+        padding: 2rem;
+
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li{
+                font-size: 1.7rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                text-align: center;
+                padding: 1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid rgba($color-grey-dark, 0.3);
+                }
+            }
+        }
+    }
+
+    &__cta{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+    }
+
+    &__price-box{
+        margin-bottom: 2rem;
+    }
+
+    &__price-only{
+        color: $color-white;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
+    @include respond(tab-port){
+        height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.4); 
+    
+        &__side{
+            position: relative;
+            top: 0;
+            left: 0;
+            height: auto;
+            width: 100%;
+            margin-left: -0.0000000001%;
+            overflow: hidden;
+            box-shadow: none;
+    
+            &--back{
+                transform: rotateY(0);
+                -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    
+        &:hover &__side--front{
+            transform: rotateY(0);
+        }
+    
+        &__cta{
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            padding: 7rem 4rem 4rem 4rem;
+        }
+    
+        &__price-box{
+            margin-bottom: 2rem;
+        }
+    
+        &__price-only{
+            color: $color-white;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+    
+        &__price-value{
+            font-size: 6rem;
+            font-weight: 100;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.header{
+	position: relative;
+	height: 85vh;
+	background-image: linear-gradient(to right bottom, 
+		rgba($color-primary, 0.804),
+		rgba($color-darker, 0.804)) ,
+		url(../image/italy5_2X.jpg);
+	background-size: cover;
+	background-position: top;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+	@supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+		height: 95vh;
+	}
+
+	@include respond(phone){
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+	}
+
+    &__logo-box{
+        position: absolute;
+	    top: 1rem;
+	    left: 1rem;
+
+		@include respond(tab-port){
+			display: none;
+		}
+    }
+
+    &__logo{
+        width: 6rem;
+	    height: 6rem;
+    }
+
+    &__text-box{
+        position: absolute;
+	    top: 40%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    text-align: center;
+    }
+}

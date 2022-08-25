@@ -1,0 +1,17 @@
+{
+  "name": "pizza",
+  "version": "1.0.0",
+  "description": "landing page for pizza",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss style/style.css -w",
+    "compile:sass": "node-sass sass/main.scss style/style.comp.css",
+    "prefix:css":""
+  },
+  "author": "Anna",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^7.0.1"
+  }
+}

@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 0.7rem;
+  box-sizing: border-box; }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(248, 233, 7, 0.804), rgba(188, 177, 7, 0.804)), url(../image/italy5.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+
+.header__logo-box {
+  position: absolute;
+  top: 1rem;
+  left: 1rem; }
+
+.header__logo {
+  width: 6rem;
+  height: 6rem; }
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.heading-primary {
+  text-transform: uppercase;
+  text-align: center;
+  backface-visibility: hidden;
+  white-space: nowrap;
+  margin-bottom: 6rem; }
+
+.heading-primary--main {
+  display: block;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.8em;
+  margin-right: -0.8em;
+  color: #fff;
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out; }
+
+/* 
+animation-delay:3s;
+animation-iteration:2; 
+*/
+.heading-primary--sub {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.7em;
+  margin-right: -0.7em;
+  color: #fff;
+  animation-name: moveInRight;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-8rem); }
+  60% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(8rem); }
+  60% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  display: inline-block;
+  border-radius: 7rem;
+  transition: all .2s;
+  position: relative; }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+
+.btn:hover {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4); }
+
+.btn:active {
+  transform: translateY(-0.7rem); }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .3s; }
+
+.btn--white::after {
+  background-color: #fff; }
+
+.btn:hover::after {
+  transform: scaleX(1.3) scaleY(1.5);
+  opacity: 0; }
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.btn--animated {
+  animation: moveInButton .4s ease-out .75s;
+  animation-fill-mode: backwards; }

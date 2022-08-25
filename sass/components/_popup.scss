@@ -1,0 +1,104 @@
+.popup{
+    background-color: rgba($color-black, .8);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)){
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .4);
+    }
+
+    &:target{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__content{
+        display: table;
+        background-color: $color-white;
+        z-index: 32;
+        width: 75%;
+        height: 50rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 2rem 4rem rgba($color-black, .8);
+        border-radius: 3px;
+        overflow: hidden;
+        transform: translate(-50%, -50%) scale(.2);
+        transition: all .3s;
+    }
+
+    &__left{
+        display: table-cell;
+        width: 33.333333%;
+
+        @include respond(tab-port){
+            display: none;
+        }
+    }
+
+    &__right{
+        display: table-cell;      
+        width: 66.666666%;
+        text-align: center;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+
+        @include respond(tab-port){
+            margin: auto;
+            margin-top: 5rem;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__img{
+        display: block;
+        width: 100%;
+        height: 50%;
+    }
+
+    &__text{
+        font-size: 1.4rem;
+        text-align: left;
+        column-count: 2;
+        column-gap: 2rem; //1em =14px
+        margin-bottom: 7rem;
+        column-rule: 1px solid rgba($color-black, .1);
+
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+
+        @include respond(tab-port){
+            column-count: 1;
+        }
+    }
+
+    &:target &__content{
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close{
+        text-decoration: none;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        font-size: 3rem;
+        line-height: 1;
+
+        &:hover{
+            color: $color-primary;
+        }
+    }
+}

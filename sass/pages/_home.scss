@@ -1,0 +1,100 @@
+.section-about{
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+}
+
+.section-about div.u-margin-buttom-80{
+    @include respond(tab-port){
+        margin-bottom: 0;
+    }
+}
+
+.section-features{
+    margin-top: -20rem;
+    padding: 20rem 0;
+    position: relative;
+	height: 50vh;
+	background-image: linear-gradient(to right bottom, 
+		rgba($color-primary, 0.804),
+		rgba($color-darker, 0.804)) ,
+		url(../image/italy5.jpg);
+	background-size: cover;
+	background-position: top;
+    transform: skewY(-7deg);
+
+    @include respond(tab-port){
+        height: auto;
+        margin-top: 0;
+    }
+
+    & > *{
+        transform: skewY(7deg);
+    }
+}
+
+.section-new-propositions{
+    background-color: $color-grey-light-1;
+    padding: 10rem 0;
+    margin-top: -10rem;
+    position: relative;
+}
+
+.section-stories{
+    position: relative;
+}
+
+.section-booking{
+    padding: 10rem 0;
+    background: linear-gradient(to right bottom,
+        rgba($color-lighter, .9),
+        rgba($color-darker, .9));
+}
+
+.book{
+    background-image: linear-gradient(105deg, 
+        rgba($color-white, .9) 0%, 
+        rgba($color-white, .9) 50%,
+        transparent 50.1%),
+        url(../../image/italy4.jpg);
+    width: 75vw;
+    background-size: cover;
+    margin: auto;
+    background-position: bottom;
+    border-radius: 3px;
+    box-shadow: 0 5rem 6rem rgba($color-black, .2);
+    position: relative;
+
+    @include respond(tab-land){
+        width: 90%;
+    }
+
+    @include respond(tab-port){
+        width: 100%;
+        height: 50vh;
+
+        background-image: linear-gradient(0, 
+        rgba($color-white, .9) 0%, 
+        rgba($color-white, .9) 50%),
+        url(../../image/italy4.jpg);
+    }
+
+    &__form{
+        width: 50%;
+        padding: 4rem;
+
+        @include respond(tab-port){
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    }
+}
+
+.section-booking div.row{
+    @include respond(tab-port){
+        max-width: 90rem;
+    }
+}

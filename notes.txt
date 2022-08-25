@@ -1,0 +1,29 @@
+Init sass
+
+1. install node.js
+
+2. init sass in project with command: npm init
+
+3. install sass as a dependency to project. command: npm install node-sass --save-dev
+
+	--save-dev is devDependencies
+	--save is dependencies
+
+4.if dependencies are declared in package.json use : npm install  and they will be installed
+
+5.npm uninstall ... to delete dependency 
+
+6. "scripts": {
+    "compile:sass" : "node-sass sass/main.scss style/style.css -w"
+  } in package.json - compiler
+
+	
+	npm run compile:sass - run compiler
+
+7. The Easiest Way of Automatically Reloading a Page on File Changes - npm install live-server -g
+	
+	then run: live-server in project
+
+
+
+
